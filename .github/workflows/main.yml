@@ -21,5 +21,5 @@ jobs:
         file: ./src/Dockerfile
         push: true
         tags: |
-        jmarcelotse/primeira-pipeline:v${{ github.run_number }}
-        jmarcelotse/primeira-pipeline:latest
+          jmarcelotse/primeira-pipeline:v${{ github.run_number }}
+          jmarcelotse/primeira-pipeline:latest
