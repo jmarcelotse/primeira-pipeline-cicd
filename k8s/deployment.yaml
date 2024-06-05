@@ -1,18 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: web
+  name: app-web
 spec:
   selector:
     matchLabels:
-      app: web
+      app: app-web
   template:
     metadata:
       labels:
-        app: web
+        app: app-web
     spec:
       containers:
-      - name: web
+      - name: app-web
         image: jmarcelotse/primeira-pipeline
         ports:
         - containerPort: 5000
@@ -20,10 +20,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: web
+  name: app-web
 spec:
   selector:
-    app: web
+    app: app-web
   ports:
   - port: 80
     targetPort: 5000
