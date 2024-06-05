@@ -38,7 +38,7 @@ jobs:
       uses: azure/k8s-set-context@v4
       with:
         method: kubeconfig
-        kubeconfig: ${{ secrets.K8S_CONFIG_GCP }}
+        kubeconfig: ${{ secrets.K8S_CONFIG_MINI }}
 
     - name: Verificar contexto atual do Kubernetes (depuração)
       run: kubectl config current-context
