@@ -31,18 +31,6 @@ jobs:
     runs-on: ubuntu-latest
     needs: [CI]
     steps:
-    - name: Adicionando a chave GPG do Google Cloud
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y apt-transport-https ca-certificates gnupg
-        echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] http://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
-        curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | gpg --dearmor | sudo tee /usr/share/keyrings/cloud.google.gpg >/dev/null
-
-    - name: Instalando o Plugin GKE Auth e Google Cloud SDK
-      run: |
-        sudo apt-get update && \
-        sudo apt-get install -y google-cloud-cli-gke-gcloud-auth-plugin && \
-        sudo apt-get install -y google-cloud-sdk
 
     - name: Obtendo o código
       uses: actions/checkout@v4
