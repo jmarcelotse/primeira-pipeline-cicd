@@ -40,10 +40,10 @@ jobs:
         method: kubeconfig
         kubeconfig: ${{ secrets.K8S_CONFIG_GCP }}
 
-    - name: Obter contexto atual do Kubernetes (depuração)
+    - name: Verificar contexto atual do Kubernetes (depuração)
       run: kubectl config current-context
 
-    - name: Obter nós do Kubernetes (depuração)
+    - name: Listar nós do Kubernetes (depuração)
       run: kubectl get nodes
 
     - name: Implantação no Kubernetes
